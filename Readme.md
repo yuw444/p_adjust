@@ -1,18 +1,18 @@
 ## Disclaimer
 
-The following documentation is modified based on the `?stats::p.adjust` in `R Documentation` that authored by `R Core Team and contributors worldwide`. It is used here under [GPL-2.0 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+The following documentation is modified based on the `?stats::p.adjust` in `R Documentation` that is authored by `R Core Team and contributors worldwide`. It is used here under [GPL-2.0 License](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
 
 ## Adjusted Pvalue
 
-* The [p-value](https://en.wikipedia.org/wiki/P-value) adjustment is widely adapted in Statistics when multiple testings occurs. The actual `C` implementation has not been found to the best of my knowledge. This library is aimed to provide a similiar `API` with `R::stats::p.adjust` without `NA` support. 
+* The [p-value](https://en.wikipedia.org/wiki/P-value) adjustment is widely adapted in Statistics when multiple testings occur. The actual `C` implementation has not been found to the best of my knowledge. This library is aimed to provide a similar `API` with `R::stats::p.adjust` without `NA` support. 
 
-* The adjustment methods include the [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) ("bonferroni") in which the p-values are multiplied by the number of comparisons.Less conservative corrections are also included by [Holm (1979)](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method) ("holm"), [Hochberg (1988)](https://en.wikipedia.org/wiki/Hochberg%27s_step-up_procedure) ("hochberg"), [Hommel (1988)](https://en.wikipedia.org/wiki/Hommel%27s_method) ("hommel"), [Benjamini & Hochberg (1995)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Hochberg_procedure) ("BH" or its alias "fdr"), and [Benjamini & Yekutieli (2001)](https://en.wikipedia.org/wiki/False_discovery_rate#Benjamini%E2%80%93Yekutieli_procedure) ("BY"), respectively.A pass-through option ("none") is also included.
+* The adjustment methods include the [Bonferroni correction](https://en.wikipedia.org/wiki/Bonferroni_correction) ("bonferroni") in which the p-values are multiplied by the number of comparisons. Less conservative corrections are also included by [Holm (1979)](https://www.jstor.org/stable/4615733) ("holm"), [Hochberg (1988)](https://doi.org/10.2307/2336325) ("hochberg"), [Hommel (1988)](https://doi.org/10.2307/2336190) ("hommel"), [Benjamini & Hochberg (1995)](https://doi.org/10.1111/j.2517-6161.1995.tb02031.x) ("BH" or its alias "fdr"), and [Benjamini & Yekutieli (2001)](https://doi.org/10.1214/aos/1013699998) ("BY"), respectively.
   
-* The first four methods are designed to give strong control of the family-wise error rate.There seems no reason to use the unmodified Bonferroni correction because it is dominated by Holm's method, which is also valid under arbitrary assumptions.
+* The first four methods are designed to give strong control of the family-wise error rate. There seems to be no reason to use the unmodified Bonferroni correction because it is dominated by Holm's method, which is also valid under arbitrary assumptions.
 
-* Hochberg's and Hommel's methods are valid when the hypothesis tests are independent or when they are non-negatively associated (Sarkar, 1998; Sarkar and Chang, 1997).Hommel's method is more powerful than Hochberg's, but the difference is usually small and the Hochberg p-values are faster to compute.
+* Hochberg's and Hommel's methods are valid when the hypothesis tests are independent or non-negatively associated (Sarkar, 1998; Sarkar and Chang, 1997). Hommel's method is more powerful than Hochberg's, but the difference is usually small and the Hochberg p-values are faster to compute.
 
-* The "BH" (aka "fdr") and "BY" methods of Benjamini, Hochberg, and Yekutieli control the false discovery rate, the expected proportion of false discoveries amongst the rejected hypotheses.The false discovery rate is a less stringent condition than the family-wise error rate, so these methods are more powerful than the others.
+* The "BH" (aka "fdr") and "BY" methods of Benjamini, Hochberg, and Yekutieli control the false discovery rate, the expected proportion of false discoveries amongst the rejected hypotheses. The false discovery rate is a less stringent condition than the family-wise error rate, so these methods are more powerful than the others.
 
 ## How to test the library
 
