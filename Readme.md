@@ -55,4 +55,4 @@ The following documentation is modified based on the `?stats::p.adjust` in `R Do
 
 ## Contact:
 
-Please report bug through the `Issue` or contact ywang@mcw.edu for further assistance.
+Please report the bug through the `Issues` or contact ywang@mcw.edu for further assistance.
